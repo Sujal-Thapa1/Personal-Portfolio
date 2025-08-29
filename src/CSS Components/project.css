@@ -1,0 +1,338 @@
+/* Projects Section */
+.project-Container {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-Container .title {
+  color: rgb(9, 75, 151);
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.project-Container .title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, rgb(9, 75, 151), rgb(33, 236, 158));
+  border-radius: 2px;
+}
+
+/* Projects Grid */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Project Card */
+.box {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(9, 75, 151, 0.2);
+  border-color: rgba(9, 75, 151, 0.3);
+}
+
+/* Project Image */
+.project-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.projects img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.box:hover .projects img {
+  transform: scale(1.1);
+}
+
+/* Project Content */
+.box .content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.box .content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: rgb(9, 75, 151);
+  font-weight: bold;
+}
+
+.box .content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+  flex-grow: 1;
+}
+
+.box .content span {
+  font-size: 0.8rem;
+  color: rgb(33, 236, 158);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Project Technologies */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, rgba(9, 75, 151, 0.1), rgba(33, 236, 158, 0.1));
+  color: rgb(9, 75, 151);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(9, 75, 151, 0.2);
+}
+
+/* Project Link Button */
+.project-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.projectLink {
+  cursor: pointer;
+  flex: 1;
+  height: 40px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgb(9, 75, 151), rgb(17, 100, 180));
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.projectLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgb(33, 236, 158), rgb(21, 236, 201));
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.projectLink:hover::before {
+  left: 0;
+}
+
+.projectLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(9, 75, 151, 0.3);
+}
+
+.projectLink:active {
+  transform: translateY(0);
+}
+
+/* View More Section */
+.view-more {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
+
+.view-more-btn {
+  cursor: pointer;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgb(9, 75, 151), rgb(17, 100, 180));
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(9, 75, 151, 0.2);
+}
+
+.view-more-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgb(33, 236, 158), rgb(21, 236, 201));
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.view-more-btn:hover::before {
+  left: 0;
+}
+
+.view-more-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(9, 75, 151, 0.3);
+}
+
+.view-more-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(9, 75, 151, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .project-Container {
+    padding: 3rem 1.5rem;
+  }
+  
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-Container {
+    padding: 2rem 1rem;
+  }
+  
+  .project-Container .title {
+    margin-bottom: 2rem;
+  }
+  
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+  
+  .project-image {
+    height: 180px;
+  }
+  
+  .box .content {
+    padding: 1.25rem;
+  }
+  
+  .box .content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .project-actions {
+    flex-direction: column;
+  }
+  
+  .projectLink {
+    height: 35px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile Button Improvements */
+  .projectLink {
+    height: 40px;
+    font-size: 0.9rem;
+    padding: 0 1rem;
+    min-width: 100px;
+    border-radius: 25px;
+  }
+  
+  .view-more-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-Container {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .project-image {
+    height: 160px;
+  }
+  
+  .box .content {
+    padding: 1rem;
+  }
+  
+  .box .content h3 {
+    font-size: 1rem;
+  }
+  
+  .box .content p {
+    font-size: 0.85rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .projectLink {
+    height: 38px;
+    font-size: 0.85rem;
+    padding: 0 1rem;
+    border-radius: 20px;
+  }
+  
+  .view-more-btn {
+    padding: 0.75rem 1.8rem;
+    font-size: 0.95rem;
+    width: 95%;
+    max-width: 280px;
+  }
+  
+  .view-more {
+    margin-top: 2rem;
+    padding: 1rem 0;
+  }
+}
