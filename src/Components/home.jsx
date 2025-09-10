@@ -88,7 +88,15 @@ export default function Home() {
             </div>
 
             <div className="links">
-              <a>
+              <a // The path to your CV in the public folder
+                href="/Sujal Thapa.pdf"
+                // This prompts a download on desktops and some mobile browsers
+                download="Sujal Thapa CV.pdf"
+                // This is key for mobile: it opens the PDF in a new tab
+                target="_blank"
+                // Recommended for security when using target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="contactMe" onClick={handleDownloadCV}>
                   Download CV
                 </button>
