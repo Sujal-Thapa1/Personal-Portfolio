@@ -12,6 +12,11 @@ export default function Home() {
     // Create a temporary link element
     const link = document.createElement("a");
     link.href = cvFile;
+    // ADD THIS LINE: This helps on mobile by opening a new tab
+    link.target = "_blank";
+
+    // Some browsers also need this for cross-origin security
+    link.rel = "noopener noreferrer";
 
     // Set the download attribute with a desired filename
     link.setAttribute("download", "Sujal Thapa CV.pdf");
