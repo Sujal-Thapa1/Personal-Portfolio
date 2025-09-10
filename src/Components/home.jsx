@@ -5,27 +5,6 @@ import linkdin from "../images/linkdin.png";
 import profile from "../images/profile.png";
 
 export default function Home() {
-  const handleDownloadCV = () => {
-    // The path to your CV file located in the `public` folder.
-    const cvFile = "/Sujal Thapa.pdf";
-
-    // Create a temporary link element
-    const link = document.createElement("a");
-    link.href = cvFile;
-    // ADD THIS LINE: This helps on mobile by opening a new tab
-    link.target = "_blank";
-
-    // Some browsers also need this for cross-origin security
-    link.rel = "noopener noreferrer";
-
-    // Set the download attribute with a desired filename
-    link.setAttribute("download", "Sujal Thapa CV.pdf");
-
-    // Append the link to the body, click it, and then remove it
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
   return (
     <>
       <main className="mainContainer" id="home">
@@ -88,16 +67,14 @@ export default function Home() {
             </div>
 
             <div className="links">
-              <a // The path to your CV in the public folder
+              <a
                 href="/Sujal_Thapa.pdf"
-                className="contactMe" // Style this class in your CSS to look like a button
-                target="_blank" // This is KEY for mobile devices
+                className="contactMe"
+                target="_blank"
                 rel="noopener noreferrer"
-                download="Sujal Thapa CV.pdf" // This will work for most desktop browsers
+                download="Sujal Thapa CV.pdf"
               >
-                <button className="contactMe" onClick={handleDownloadCV}>
-                  Download CV
-                </button>
+                <button className="contactMe">Download CV</button>
               </a>
               <button className="Resume">See my Resume</button>
             </div>
