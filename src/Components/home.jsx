@@ -89,7 +89,7 @@ export default function Home() {
 
             <div className="links">
               <a // The path to your CV in the public folder
-                href="/Sujal Thapa.pdf"
+                href="/Sujal_Thapa.pdf"
                 className="contactMe" // Style this class in your CSS to look like a button
                 target="_blank" // This is KEY for mobile devices
                 rel="noopener noreferrer"
