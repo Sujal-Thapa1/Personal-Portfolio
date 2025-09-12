@@ -5,6 +5,39 @@ import linkdin from "../images/linkdin.png";
 import profile from "../images/profile.png";
 
 export default function Home() {
+  const handleDownload = async () => {
+    // The path to your CV file. This file MUST be in the `public` folder of your project.
+    const pdfPath = "portfolio/public/Sujal_Thapa.pdf";
+    const fileName = "Sujal_Thapa CV.pdf";
+
+    try {
+      // Use the fetch API to get the PDF file as a blob.
+      const response = await fetch(pdfPath);
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      const blob = await response.blob();
+
+      // Create a temporary URL for the blob object.
+      const url = window.URL.createObjectURL(blob);
+
+      // Create a temporary anchor element to trigger the download.
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", fileName); // Set the desired file name
+
+      // Append the anchor to the document, click it, and then remove it.
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode.removeChild(link);
+
+      // Clean up the blob URL.
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("There was a problem with the download:", error);
+    }
+  };
+
   return (
     <>
       <main className="mainContainer" id="home">
@@ -67,15 +100,9 @@ export default function Home() {
             </div>
 
             <div className="links">
-              <a
-                href="/Sujal_Thapa.pdf"
-                className="contactMe"
-                target="_blank"
-                rel="noopener noreferrer"
-                download="Sujal Thapa CV.pdf"
-              >
-                <button className="contactMe">Download CV</button>
-              </a>
+              <button className="contactMe" onClick={handleDownload}>
+                Download CV
+              </button>
               <button className="Resume">See my Resume</button>
             </div>
           </div>
